@@ -1,0 +1,53 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pennylane-client"
+version = "0.1.0"
+description = "Async Python client for the Pennylane API"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.13"
+authors = [
+    { name = "Lenstra", email = "tech@lenstra.co" },
+]
+keywords = ["pennylane", "api", "client", "accounting", "invoicing"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Typing :: Typed",
+]
+dependencies = [
+    "httpx>=0.27.0",
+    "jsonschema>=4.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/Lenstra/pennylane-client-python"
+Repository = "https://github.com/Lenstra/pennylane-client-python"
+Issues = "https://github.com/Lenstra/pennylane-client-python/issues"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.12.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["pennylane_client"]
+
+[tool.hatch.build.targets.sdist]
+exclude = ["tests", "scripts", "dist"]
+
+[tool.ruff]
+# Generated file, formatted by scripts/generate_api.py itself.
+extend-exclude = ["pennylane_client/api.py"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+ignore = ["E501"]
