@@ -7,6 +7,9 @@ Async Python client for the [Pennylane API](https://pennylane.readme.io/)
 uv add pennylane-client
 ```
 
+Using an AI coding agent? Point it to [`AGENTS.md`](AGENTS.md): how to find
+the right method, conventions, recipes and pitfalls.
+
 ## Why it's built this way
 
 The client is generated from Pennylane's own published OpenAPI spec, the same
